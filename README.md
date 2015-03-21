@@ -10,6 +10,6 @@ Warm-up Programming Assignment 1
 
 ### working with DB
 
-* create DB: ```rails generate model member user_id:string:uniq user_pass:string login_cnt:integer```
+* create DB: ```rails generate model member userid:string:uniq userpass:string count:integer```
 
 * delete DB: ```rails destroy model member```

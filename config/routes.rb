@@ -8,6 +8,10 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
+  get '/signup', to: 'apisignup#index'
+  post '/signup', to: 'apisignup#index'
+  get '/login', to: 'apilogin#index'
+  post '/login', to: 'apilogin#index'
   get '/clearData', to: 'apicleardata#index'
   post '/clearData', to: 'apicleardata#index'
 
