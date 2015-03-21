@@ -24,4 +24,10 @@ ActiveRecord::Schema.define(version: 20140707111715) do
     t.datetime "updated_at"
   end
 
+  create_table "members", force: true do |t|
+    t.string    "id"
+    t.string    "pass"
+    t.integer   "count"
+  end
+
 end

@@ -8,6 +8,10 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
+  get '/clearData', to: 'apicleardata#index'
+  post '/clearData', to: 'apicleardata#index'
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
