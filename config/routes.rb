@@ -8,12 +8,12 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  get '/signup', to: 'apisignup#index'
-  post '/signup', to: 'apisignup#index'
-  get '/login', to: 'apilogin#index'
-  post '/login', to: 'apilogin#index'
-  get '/clearData', to: 'apicleardata#index'
-  post '/clearData', to: 'apicleardata#index'
+  get '/signup', to: 'swpp#signup_json'
+  post '/signup', to: 'swpp#signup_json'
+  get '/login', to: 'swpp#login_json'
+  post '/login', to: 'swpp#login_json'
+  get '/clearData', to: 'swpp#cleardata_page'
+  post '/clearData', to: 'swpp#cleardata_page'
 
 
   # Example of regular route:
