@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
 
-  root 'welcome#index'
+  #root 'welcome#index'
+  root 'swpp#main_page'
 
   get '/signup', to: 'swpp#signup_json'
   post '/signup', to: 'swpp#signup_json'
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
   post '/login', to: 'swpp#login_json'
   get '/clearData', to: 'swpp#cleardata_page'
   post '/clearData', to: 'swpp#cleardata_page'
+
 
 
   # Example of regular route:
