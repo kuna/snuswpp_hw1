@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
 
   #root 'welcome#index'
-  root 'swpp#main_page'
+  #root 'swpp#main_page'
+  get '/', to: 'swpp#main_page'
+  post '/', to: 'swpp#main_page'
 
   get '/signup', to: 'swpp#signup_json'
   post '/signup', to: 'swpp#signup_json'

@@ -9,7 +9,7 @@
 <%end%>
 
 <!-- demo -->
-<form role="form" method="get" action="/">
+<form role="form" method="post" action="/">
     <div class="form-group">
         <label for="username">Username</label>
         <input type="text" placeholder="username" id="username" name="username" class="form-control" />
@@ -21,6 +21,7 @@
 
     <button type="submit" class="btn btn-default" value="login" name="status" /><span class="glyphicon glyphicon-user"></span> Login</button>
     <button type="submit" class="btn btn-default" value="adduser" name="status" /><span class="glyphicon glyphicon-plus"></span> Add User</button>
+    <%= token_tag %>
 </form>
 
 
