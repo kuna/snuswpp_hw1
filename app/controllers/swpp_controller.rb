@@ -95,17 +95,19 @@ class SwppController < ApplicationController
 ########################################
 
     def main_page
-        if islogined
-            # check if user selected logout
-            if (params[:status] == "logout")
-                logout
-                login_page
-            else
-                logined_page
-            end
-        else
-            login_page
-        end
+        #if islogined
+        #    # check if user selected logout
+        #    if (params[:status] == "logout")
+        #        logout
+        #        login_page
+        #    else
+        #        logined_page
+        #    end
+        #else
+        #    login_page
+        #end
+        #@logined = islogined
+        login_page
     end
 
     def login_page
@@ -147,6 +149,11 @@ class SwppController < ApplicationController
 
     def cleardata_page
         cleardata
+        render :text => ""
+    end
+
+    def logout_page
+        logout
         render :text => ""
     end
 end

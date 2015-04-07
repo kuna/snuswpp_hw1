@@ -1,27 +1,31 @@
-<h1>Welcome!</h1>
+<style>
+<% if @logined %>
+#container_login { display:none; }
+<% else %>
+#container_logined { display:none; }
+<% end %>
+</style>
 
-<%if !@errormsg.empty?%>
-<div class="alert alert-danger">
-    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-    <span class="sr-only">Error: </span>
-    <%=@errormsg %>
+<div id="container_login">
+    <h1 id="status">Please enter your credentials below</h1>
+
+    <!--form role="form" method="post" action="/"-->
+    <form>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" placeholder="username" id="username" name="username" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" placeholder="password" id="password" name="password" class="form-control" />
+        </div>
+
+        <button type="button" class="btn btn-default" value="login" name="status" id="login"/><span class="glyphicon glyphicon-user"></span> Login</button>
+        <button type="button" class="btn btn-default" value="adduser" name="status" id="signup"/><span class="glyphicon glyphicon-plus"></span> Add User</button>
+        <%= token_tag %>
+    </form>
 </div>
-<%end%>
-
-<!-- demo -->
-<form role="form" method="post" action="/">
-    <div class="form-group">
-        <label for="username">Username</label>
-        <input type="text" placeholder="username" id="username" name="username" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" placeholder="password" id="password" name="password" class="form-control" />
-    </div>
-
-    <button type="submit" class="btn btn-default" value="login" name="status" /><span class="glyphicon glyphicon-user"></span> Login</button>
-    <button type="submit" class="btn btn-default" value="adduser" name="status" /><span class="glyphicon glyphicon-plus"></span> Add User</button>
-    <%= token_tag %>
-</form>
-
-
+<div id="container_logined">
+    <h1 id="status_login"></h1>
+    <button type="button"  class="btn btn-default" value="adduser" name="status" id="logout"/>Logout</button>
+</div>

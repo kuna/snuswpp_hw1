@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   post '/login', to: 'swpp#login_json'
   get '/clearData', to: 'swpp#cleardata_page'
   post '/clearData', to: 'swpp#cleardata_page'
+  get '/logout', to: 'swpp#logout_page'
+  post '/logout', to: 'swpp#logout_page'
 
 
 
