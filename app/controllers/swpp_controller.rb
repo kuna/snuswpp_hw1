@@ -1,4 +1,5 @@
 class SwppController < ApplicationController
+    skip_before_filter :verify_authenticity_token
     def login(userid, userpass)
         member = Member.find_by(userid: userid, userpass: userpass)
         if member.blank?
@@ -69,6 +70,7 @@ class SwppController < ApplicationController
 ########################################
 
     def login_json
+
         userid = params[:username]
         userpass = params[:password]
         ret = login(userid, userpass)
@@ -80,6 +82,7 @@ class SwppController < ApplicationController
     end
 
     def signup_json
+
         userid = params[:username]
         userpass = params[:password]
         ret = signup(userid, userpass)
